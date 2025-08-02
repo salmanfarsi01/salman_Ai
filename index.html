@@ -8,12 +8,92 @@
     <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="sf.png">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <style>
       html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* adjust if your header is taller or shorter */
 }
+        /* ✅ Portfolio Section */
+.portfolio-section {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.portfolio-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa, #34d399);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+.swiper {
+  padding-bottom: 4rem;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 320px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #60a5fa;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #f1f5f9;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+}
+
+.github-btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.github-btn:hover {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  box-shadow: 0 8px 20px rgba(96, 165, 250, 0.4);
+}
+
 
         :root {
             /* Dark Mode Variables (Default) */
@@ -1344,26 +1424,69 @@ I also dive into research — using data science and machine learning to find pa
                 <!-- CV Card -->
                 <div class="portfolio-card">
                     <h3>Download CV</h3>
-                    <p>Get my latest CV in PDF format with detailed experience and skills.</p>
+                    <p>Get my latest CV in PDF format.</p>
                     <a href="cv.pdf" class="portfolio-btn">Download CV</a>
                 </div>
 
                 <!-- LinkedIn Card -->
                 <div class="portfolio-card">
                     <h3>LinkedIn</h3>
-                    <p>Connect with me on LinkedIn for professional networking.</p>
+                    <p>Connect with me on LinkedIn.</p>
                     <a href="https://www.linkedin.com/in/salman-farsi4545/" class="portfolio-btn" target="_blank" rel="noopener noreferrer">View Profile</a>
                 </div>
 
                 <!-- GitHub Card -->
                 <div class="portfolio-card">
                     <h3>GitHub</h3>
-                    <p>Explore my projects, code repositories on GitHub.</p>
+                    <p>Explore my projects on GitHub.</p>
                     <a href="https://github.com/salmanfarsi01" class="portfolio-btn" target="_blank" rel="noopener noreferrer">View GitHub</a>
                 </div>
 
             </div>
         </section>
+        <!--projects-->
+        <!-- ✅ Portfolio Section -->
+<section id="portfolio" class="portfolio-section">
+  <h2>Recently Completed Projects</h2>
+
+  <!-- Swiper Container -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- ✅ Slide 1: RAG Chatbot with Ollama -->
+      <div class="swiper-slide">
+        <div class="project-card">
+          <h3>RAG Chatbot with Ollama</h3>
+          <p>This project implements a lightweight Retrieval-Augmented Generation (RAG) chatbot using the LLaMA 3 model via Ollama, FAISS for vector search, and HuggingFaceEmbeddings for semantic search — all powered locally.</p>
+          <a href="https://github.com/salmanfarsi01/Rag_Chatbot_using_llama3" target="_blank" class="github-btn">GitHub</a>
+        </div>
+      </div>
+
+      <!-- ✅ Slide 2: Matched Information to PDF Generator -->
+      <div class="swiper-slide">
+        <div class="project-card">
+          <h3>Matched Information to PDF Generator</h3>
+          <p>Features: Generates dummy foundation data (names, locations, fields, funding types, deadlines, contacts). Uses Google Generative AI (Gemini) to process and match information. Converts matched results into a neatly formatted PDF.</p>
+          <a href="https://github.com/salmanfarsi01/AI_will_generate_informative_PDF_based_on_your_given_input" target="_blank" class="github-btn">GitHub</a>
+        </div>
+      </div>
+
+      <!-- ✅ Slide 3: Sales Dashboard -->
+      <div class="swiper-slide">
+        <div class="project-card">
+          <h3>Sales Dashboard</h3>
+          <p>Sales dashboard with Executive Regional Insights. Created an interactive Power BI dashboard with bar, pie, line, and map visuals to analyze sales, profit, and regional performance. Used DAX to calculate totals, apply filters, and generate dynamic KPIs.</p>
+          <a href="https://github.com/salmanfarsi01/Sales-Dashboard-with-Executive-Regional-Insights-Power-BI" class="github-btn">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Swiper Controls -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
 
         <!-- Skills Section -->
         <section id="skills" class="skills-section">
@@ -1685,6 +1808,41 @@ I also dive into research — using data science and machine learning to find pa
         }
     </script>
     <script src="//code.tidio.co/e7bpqokhyweq677td3pwfbg7y8qwplwe.js" async></script>
+    <!-- ✅ Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      // ✅ Mobile first
+      0: {
+        slidesPerView: 1,
+      },
+      640: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+</script>
+
 </body>
 
 </html>
+
